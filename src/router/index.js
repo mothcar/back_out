@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import page2 from '../views/Page2.vue'
 
 Vue.use(VueRouter)
 
@@ -8,7 +9,13 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    
+  },
+  {
+    path: '/page2',
+    name: 'page2',
+    component: page2
   },
   {
     path: '/about',
@@ -23,7 +30,10 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  
 })
-
+// router.beforeEach((to, from, next) => {
+//   console.log('This is activate : ', to+from+next)
+// })
 export default router
